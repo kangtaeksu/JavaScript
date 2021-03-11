@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var data = 'Global data';
+	
+	var obj1={'data': 'obj1 data'};
+	var obj2={'data': 'obj2 data'};
+	
+	function func(){
+		console.log(this.data);
+	}
+	
+	func();
+	//console.log(this.data);
+	//이건 일반함수라서 사실 Global data이다
+	//하지만 obj1으로 변경하고싶을떄=>call함수활용
+	func.call(obj1);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

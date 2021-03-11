@@ -5,38 +5,37 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	//객체를 활용하여 계산기 프로그램을 구현하자.
-
+	
 	//document.fmt.f1.value;
 	//document.fmt.result.value = 연산값
-	//이벤트 핸들러함수(){this.value}
-	//<input type="button" value="-" onclick="val('-')"><br>
+	// 이벤트핸들러함수(){ this.value }
 	
-	var calculate ={
-		num1: 0,	
-		num2 : 0,	
-		sum: 0,
-		cals: function(){
-			num1 = parseInt(document.fmt.f1.value);//정수변환
-			num2 = parseInt(document.fmt.f2.value);//정수변환
-			var opt = this.value; //중요
-			if ( opt == '+'){
-				sum = num1 + num2;
-			}else{
-				sum = num1-num2;
+	var calculate = {
+			num1 : 0,
+			num2 : 0,
+			sum : 0,
+			cals : function(){
+				num1 = parseInt(document.fmt.f1.value);
+				num2 = parseInt(document.fmt.f2.value);
+				var opt = this.value;
+				
+				if(opt == '+'){
+					sum = num1 + num2;
+				}else{
+					sum = num1 - num2;
+				}
+				
+				document.fmt.result.value = sum;
 			}
-			
-			document.fmt.result.value = sum;
-		}
 	};
 	
 	window.onload = function(){
 		var plus = document.getElementById('plus');
 		var minus = document.getElementById('minus');
 		
-		plus.onclick = calculate.cals;	
-		minus.onclick = calculate.cals;	
-	}
-	
+		plus.onclick = calculate.cals;
+		minus.onclick = calculate.cals;
+	}	
 	
 </script>
 </head>
@@ -53,9 +52,9 @@
 				<td><input type="text" name="f2"></input></td>
 			</tr>
 			<tr>
-				<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="button" value="+" id="plus"></input> &nbsp;&nbsp;&nbsp;&nbsp; 
-				 <input type="button" value="-" id="minus"></input>
+				<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp; 
+					<input type="button"	value="+" id="plus"></input> &nbsp;&nbsp;&nbsp;&nbsp; 
+					<input type="button" value="-" id="minus"></input>
 				</td>
 			</tr>
 			<tr>

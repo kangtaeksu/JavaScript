@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var data = 10;
+	//핸들러함수 (이벤트발생용)
+	window.onload = function(){
+		var btn = document.getElementById("btn");
+		//핸들러함수 (이벤트발생용)
+		btn.onclick = function(){
+			this.data =20;//생성자 안에있으므로 
+			data = 30;//전역에 연결됨
+			
+			console.log("1.data : "+data);//30
+			console.log("2.this.data : "+this.data);//20
+			console.log("3.windowdata : "+window.data);//30
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+<button id = "btn">버튼</button>
+</body>
+</html>

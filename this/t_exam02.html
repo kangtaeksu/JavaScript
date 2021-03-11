@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var data = 10;
+	
+	function Myclass(){
+		this.data = 0; //생성자함수, 프로토타입의 this는 자기자신의 객체
+	}
+	
+	MyClass.prototype.method1 = function(){
+		
+		this.data =20;//(중요!!)일반함수안에서 this는 window객체
+		data = 30;
+		
+		console.log("1.data : "+data);//30
+		console.log("2.this.data : "+this.data);//20
+		console.log("3.windowdata : "+window.data);//30
+	}
+	
+	var m1 = new Myclass(); //이렇게되므로 Myclass는 생성자함수
+	m1.method1();
+</script>
+</head>
+<body>
+
+</body>
+</html>
