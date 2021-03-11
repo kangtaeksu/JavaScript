@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//함수를 호출할 경우 생성되는 실행 컨텍스트 영역
+var var1 =10;
+function func(){
+	var var1 =20;
+	console.log("var:"+ var1);
+	
+}
+console.log("var:"+ var1);//10 출력 실행컨텍스트영역자체가 밖이므로
+func();// 20 왜냐면 자기 컨텍스트영역이 우선순위기 때문에
+///////////////////////
+
+var value = "value1";
+
+function printFunc(){
+	var value = "value2";
+	
+	function printValue(){
+		return value;
+	}
+
+	console.log(printValue());
+}
+
+printFunc();//=> value2
+////////////////////////////////
+
+
+var value = "value1";
+
+function printValue(){
+	return value;
+}
+
+function printFunc(func){
+	var value = "value2";
+	console.log(func());
+	
+}
+
+printFunc(printValue);
+
+////////////
+
+//클로저
+function outerFunc(){
+	var x =10;
+	
+	var innerFunc= function(){
+		
+		console.log(x)
+		
+	}
+return innerFunc;
+}
+var inner=outerFunc();
+
+
+function outer(arg1, arg2){
+	var local =8;
+	
+	function inner(inner Arg){
+		console.log((arg1+arg2)/(innerArg+local));
+	}
+	return inner;
+}
+
+//var iner = outer(10,10);
+//exam(2);
+//=>
+outer(10,10)(2);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

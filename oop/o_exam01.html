@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//사용자 정의 객체
+	//중괄호는 무조건 객체
+	
+	//1.Object 객체이용=> 동적 프로퍼티 추가가능
+	var obj = new Object();
+	obj.name = "taeksu";
+	obj.age = 25;
+	
+	console.log("이름 : "+obj.name);
+	console.log("나이 : "+obj.age);
+	
+	//2.리터럴 형식 객체(이게 젤 자주쓰임)
+	var a ={};
+	var obj2 ={
+		name:"take",
+		age :25,
+		display : function(){
+			console.log(this.name);
+		}
+			
+	};
+
+	obj2.display();
+	
+	//함수도 객체이다
+	gunction add(x,y){
+		return x+y;
+	}
+	
+	add.result = add(100,200);
+	add.status = 'ok';
+	
+	console.log(add,result);
+	console.log(add,status);
+	
+	//리터럻ㅇ식으로 빈객체생성후 동적프로퍼티와 함수를 등록후 호출해서 사용
+	
+	var obj={};
+	obj3.name ="tae";
+	obj3.display = function(){
+		return this.name;
+	}
+	
+	console.log(obj3.display());
+	
+	
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

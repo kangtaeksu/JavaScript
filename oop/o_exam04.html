@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//Rectangle 생성자함수를 만들고 넓이를 구하여 보자.(prototype : getArea())
+	//객체 생성
+	//메서도 호출 : 넓이 출력
+	/* function Rectangle(width, height){
+		//가로, 세로
+		this.width = width;
+		this.height = height;
+	}
+	
+	Rectangle.prototype.getArea = function(){
+		return this.width * this.height;		
+	}
+	
+	var rectancle = new Rectangle(5, 7);
+	//rectancle.width = -10;
+	console.log(rectancle.getArea()); 
+	
+	---------------------------------------------------
+	*/
+	
+	/* function Rectangle(w, h){
+		//가로, 세로
+		var width = w;
+		var height = h;
+		
+		this.setWidth = function(w){
+			width = w;
+		};
+		this.getWidth = function(){
+			return width;
+		};
+		this.setHeight = function(h){
+			height = h;
+		};
+		this.getHeight = function(){
+			return height;
+		};
+	}
+	
+	Rectangle.prototype.getArea = function(){
+		return this.getWidth() * this.getHeight();		
+	};
+	
+	var rectancle = new Rectangle(5, 7);
+	//rectancle.width = -10;
+	rectancle.setWidth(10);
+	console.log(rectancle.getArea()); 
+	
+	-----------------------------------------------
+	*/
+	
+	class Rectangle{
+		constructor(w, h)
+		{
+			this.width = w;
+			this.height = h;
+		}
+		
+		setWidth(w){
+			this.width = w;
+		}
+		getWidth(){
+			return this.width;
+		}
+		setHeight(h){
+			this.height = h;
+		}
+		getHeight(){
+			return this.height;
+		}
+		getArea(){
+			return this.width * this.height;
+		}		
+	}	
+	
+	/* var rectancle = new Rectangle(5, 7);	
+	rectancle.setWidth(10);
+	console.log(rectancle.getArea()); */
+	
+	class Square extends Rectangle{
+		constructor(length)
+		{
+			super(length, length);
+		}
+	}
+	
+	var square = new Square(10);
+	console.log(square.getArea());
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

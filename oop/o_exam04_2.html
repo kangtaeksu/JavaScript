@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function Rectangle(w, h){
+	var width = w;
+	var height = h;
+	
+	this.setWidth= function(w){
+		width =w;
+	};
+	this.getWidth= function(){
+		return width;
+	};
+	this.setHeight= function(h){
+		height = h;
+	};
+	this.getHeight= function(){
+		return height;
+	};
+}
+
+Rectangle.prototype.getArea = function(){
+	return this.getwidth*this.getheight;
+};
+
+var r1 = new Rectangle(5,7);
+r1.setWidth(10);
+console.log(r1.getArea());
+/////////////////////////////////
+	class Rectangle{
+		constructor(w, h)
+		{
+			this.width = w;
+			this.height =h;
+		}
+		setWidth(w){
+			this.width =w;
+		}
+		getWidth(){
+			return this.width;
+		}
+		setHeight(h){
+			this.height = h;
+		}
+		getHeight(){
+			return this.height;
+		}
+		getArea(){
+			return this.width*this.height;
+		}
+}
+
+var r1 = new Rectangle(5,7);
+r1.setWidth = 10;
+console.log(r1.getArea());
+
+class Square extends Rectangle{
+	constructor(length)
+	{
+		super(length,length);
+	}
+}
+
+var square = new Square(10);
+console.log(square.getArea());
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

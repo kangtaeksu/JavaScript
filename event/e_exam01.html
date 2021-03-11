@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="crossEvent.js">
+	
+</script>
+<script type="text/javascript">
+	function doProcess() {
+		var result = document.getElementById("result");
+		result.innerHTML = "<span> 이벤트결과 </span>";
+	}
+
+	function doProcess2() {
+		alert("이벤트결과2");
+	}
+
+	window.onload = function() {
+		var btn = document.getElementById("btn");
+		//btn.onclick = doProcess2;//함수호출이아닌 함수를 불러오자
+		//btn.onclick =doProcess;    //=>이렇게 두개넣으면 위에꼐 뭍힘
+
+		//btn.addEventListener('click',doProcess2,false );
+		//btn.addEventListener('click',doProcess,false );
+
+		//옛날 브라우저를 위해
+		cross.Event.addListener(btn, 'click', doProcess2, false);
+		cross.Event.addListener(btn, 'click', doProcess, false);
+
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="버튼1" onclick="doProcess()">&nbsp;&nbsp;
+	<input type="button" id="btn" value="버튼2">
+	<div id="result"></div>
+</body>
+</html>

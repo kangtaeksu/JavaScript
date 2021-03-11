@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var variableA =52;
+//전역범위
+let variableB =152;
+//스코프안에서
+const constantC = 100;
+
+console.log(variableA);
+console.log(variableB);
+console.log(variableC);
+{//여기가 스코프안
+	console.log(variableA);
+	}
+	
+//전면스코프
+console.log(variableA);
+
+{
+	let variableA =52; //==>이렇게하면 외부에서 활용못함
+	}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

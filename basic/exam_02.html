@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//숫자형(number)
+var intNum =10;
+var floatNum =3.14;
+
+console.log(typeof intNum);
+console.log(typeof floatNum);
+
+//문자형(string)
+var sinS = 'single'
+var doubleS  = "double";
+
+console.log(typeof sinS);
+console.log(typeof doubleS);
+
+//논리어(boolean)
+var boolVar = true;
+console.log(typeof boolVar);
+
+//undefined
+var emptyVar;
+console.log(typeof emptyVar);
+
+//null(object)
+var nullvar = null;
+console.log(typeof nullVar);
+
+//함수(function) ---> 이게 특이함
+var func = function(){}
+console.log(typeof func)
+
+//형변환 --중요
+console.log(typeof intNum); // ->number 이다
+intNum = "안녕";
+console.log(typeof intNum); // ->string 이다
+
+//문자열=>정수형 : eval()=>객체화할때활용 parseInt()=>주로쓰임 Number()
+var num = "15변수";
+num = parseInt(num); //parseInt는 자기가 변환할수잇는거만 변환해줌
+var num2 = num+10;
+consol.log(num2);
+
+var num3 = "15"
+
+if (num3 == 15){
+	alert("같다")
+}else{
+	alert("다르다")
+}
+//=>같다고 나옴 심지어 변환도 해줌
+if (num3 === 15){//그게싫으면 ===으로 엄격한비교
+	alert("같다")
+}else{
+	alert("다르다")
+}
+
+var myVar = "전역변수";
+
+function myFun(){
+	var myVar = "지역변수";
+	console.log("지역변수: "+myVar);
+	console.log("전역변수: "+ window.myVar);
+	console.log("전역변수: "+ this.myVar);
+	//=>일반함수에서 this = window객체
+	
+	}
+myFun();
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
