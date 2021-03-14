@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src ="httpRequest.js">
+</script><script type="text/javascript">
+	window.onad = function(){
+		sendRequest("member_json.jsp", "", viewinfo, "GET");
+	}
+
+	function viewInfo(){
+		if(httpRequest.readyState ==4 ){
+			//4번이 서버로 부터 결과값 도착 1 2 3d은 아직
+			if(httpRequest.status == 200){
+				//서버 에러없는 성공된 페이지
+				//json 자바문자열을 객체로 변환해야함=>eval
+				var result = eval("("+httpRequest.responseText+")");
+				//괄호는 syntax Error방지
+				if(result.code == 'success'){
+					var m = result.data.member;
+					var html = '<span> 이름: '+m.name+', ID: '+ m.id+ '</span>';
+					
+					var list= document.getElementById("list");
+					list.innerHTML = html;
+				
+				}
+			}			
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<div id = 'list'></div>
+</body>
+</html>

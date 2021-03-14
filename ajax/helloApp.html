@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src ="httpRequest.js">
+	function hello(){
+		var params = "name ="
+				+encodeURIComponent(document.fmt.name.value);
+	
+		sendRequest("hello.jsp", params, helloResult, "GET");
+	}
+
+
+	function helloResult(){
+		if(httpRequest.readyState ==4 ){
+			//4번이 서버로 부터 결과값 도착 1 2 3d은 아직
+			if(httpRequest.status == 200){
+				//서버 에러없는 성공된 페이지
+				alert('서버응답: ' + httpRequest.responseText);
+			}			
+		}
+	}
+</script>
+</head>
+<body>
+	<form name= "fmt">
+		<input type = "text" name ="name"/>
+		<input type = "button" value ="전송" onclick= "hello()"/>
+	</form>
+</body>
+</html>

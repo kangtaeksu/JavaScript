@@ -6,44 +6,45 @@
 <script type="text/javascript">
 	//onmouseover
 	//onmouseout
-
-	function overImg(obj) {
+	
+	function overImg(obj){
 		var img = document.getElementById('default');
 		img.src = obj.src;
-
 	}
-
-	window.onload = function() {
+	
+	window.onload = function(){
 		var img = document.getElementById('default');
 		var defaultImg = img.src;
 		
-
 		var imgs = document.getElementsByTagName("img");
-		for (var i = 0; i < imgs.length; i++) {
-			imgs[i].onmouseover = function() {
-				overIng(this);
+		for(var i=0;i<imgs.length;i++){
+			imgs[i].onmouseover = function(){
+				overImg(this);		
 			}
-			imgs[i].onmouseout = function() {
+			imgs[i].onmouseout = function(){
 				img.src = defaultImg;
-
 			}
 		}
 	}
+	
+	
 </script>
 </head>
 
 <body>
-	<center>
-		<h2>고양이 앨범</h2>
-		<img id="default" src="../images/cat0.jpg" border="1" width="600"
-			height="450"></img> <br /> <br /> <br /> <img
-			src="../images/cat1.jpg" width="70" height="70" border="1"
-			hspace="10" vspace="10"> <img src="../images/cat2.jpg"
-			width="70" height="70" border="1" hspace="10" vspace="10"> <img
-			src="../images/cat3.jpg" width="70" height="70" border="1"
-			hspace="10" vspace="10">
-
-
-	</center>
+<center>
+	<h2>고양이 앨범</h2>
+	<img id="default" src="../images/cat0.jpg" border="1" width="600" height="450"></img>
+	<br/><br/><br/>
+	
+	<img src="../images/cat1.jpg" width="70" height="70" border="1" hspace="10" 
+			vspace="10" >
+	<img src="../images/cat2.jpg" width="70" height="70" border="1" hspace="10" 
+			vspace="10">
+	<img src="../images/cat3.jpg" width="70" height="70" border="1" hspace="10" 
+			vspace="10">
+	
+	
+</center>
 </body>
 </html>
