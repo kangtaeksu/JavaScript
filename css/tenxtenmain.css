@@ -1,0 +1,58 @@
+@charset "UTF-8";
+h2 {
+	margin: 20px 0
+}
+
+.control {
+	position: absolute;
+	top: 50%;
+	z-index: 5;
+	display: inline-block;
+}
+
+.nav navbar-nav {
+	text-aligh: center;
+}
+
+.head-search {
+	width: 200px;
+	float: right;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+	margin-top: 0;
+}
+
+.top-menu {
+	float: right;
+}
+
+.top-menu li {
+	display: inline;
+	margin: 0 10px;
+}
+
+.top-menu li>a {
+	text-decoration: none;
+}
+
+.carousel-inner>.item>img {
+	top: 0;
+	left: 0;
+	max-width: 100%;
+	height: auto;
+}
+
+.mainsearch {
+	margin-top: 30px;
+}
+
+.round {
+	border-radius: 50%;
+}
+.thumbnail{
+    width: 220px;
+    border: 12px solid #fff;
+    border-radius: 50%;
+}
